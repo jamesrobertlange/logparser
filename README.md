@@ -9,3 +9,4 @@ In this specific example it takes a week in September over a week in August to d
 1. Add in filters for additional clients and customization in the output.
 2. Add in visuals to the report analysis and pivot tables. 
 3. Add in features to parse by segment and review in a UI prior to generation.
+4. Add in commas for numbers.

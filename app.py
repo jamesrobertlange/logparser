@@ -98,8 +98,8 @@ The data shows a significant change in crawl rates across the analyzed URLs. """
         f.write(report)
 
 def main():
-    period1_file = 'aug-18-25.csv'
-    period2_file = 'sep-18-25.csv'
+    period1_file = 'sep-18-25.csv'
+    period2_file = 'sep-25-oct-3.csv'
     output_csv = 'crawl_analysis.csv'
     output_report = 'crawl_analysis_report.md'
 
