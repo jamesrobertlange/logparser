@@ -1,0 +1,88 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #b19cd9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #d7bfdc;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input[type="file"] {
+            background-color: #3d3d3d;
+            color: #b19cd9;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #6a5acd;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #483d8b;
+        }
+        label {
+            color: #d7bfdc;
+        }
+        .delete-button {
+            background-color: #ff4d4d !important;
+            color: white !important;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        .delete-button:hover {
+            background-color: #e60000 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Log Analyzer</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="period1">First Log Period:</label>
+            <input type="file" id="period1" name="period1" accept=".csv" required>
+            <label for="period2">Second Log Period:</label>
+            <input type="file" id="period2" name="period2" accept=".csv" required>
+            <input type="submit" value="Analyze">
+        </form>
+        <br><br>
+        <form action="/delete_files" method="post">
+            <input type="submit" value="Delete All Files" class="delete-button">
+        </form>
+    </div>
+</body>
+</html>

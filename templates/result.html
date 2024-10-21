@@ -1,0 +1,65 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #b19cd9;
+            line-height: 1.6;
+            padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2d2d2d;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #d7bfdc;
+        }
+        a {
+            color: #6a5acd;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .delete-button {
+            background-color: #ff4d4d !important;
+            color: white !important;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        .delete-button:hover {
+            background-color: #e60000 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{ report }}
+        <p>
+            <a href="{{ url_for('download_file', filename='crawl_analysis.csv') }}">Download CSV</a> |
+            <a href="{{ url_for('download_file', filename='crawl_analysis_report.md') }}">Download Markdown</a> |
+            <a href="{{ url_for('download_file', filename='crawl_analysis_report.png') }}">Download PNG</a>
+        </p>
+        <br><br>
+        <form action="/delete_files" method="post">
+            <input type="submit" value="Delete All Files" class="delete-button">
+        </form>
+    </div>
+</body>
+</html>

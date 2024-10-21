@@ -1,0 +1,4 @@
+Flask==2.0.1
+Markdown==3.3.4
+MarkupSafe==2.0.1
+imgkit==1.2.2
